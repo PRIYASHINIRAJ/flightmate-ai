@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: flightmate-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false   # entered in the Render dashboard, never committed
+      - key: ALLOWED_ORIGINS
+        sync: false   # your Vercel address, e.g. https://flightmate.vercel.app
+      - key: APP_CONTACT
+        sync: false   # same Vercel address (Wikipedia/OpenStreetMap ask for a contact)

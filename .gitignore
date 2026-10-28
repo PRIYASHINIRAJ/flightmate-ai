@@ -1,0 +1,8 @@
+# Secrets: never upload the Gemini key
+.env
+
+.venv/
+__pycache__/
+.claude/
+frontend/node_modules/
+frontend/dist/
