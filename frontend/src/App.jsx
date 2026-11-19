@@ -315,6 +315,7 @@ function App() {
                   onChange={(event) => setInput(event.target.value)}
                   placeholder="Ask about flights, weather or plan a trip..."
                   aria-label="Ask about flights"
+                  maxLength={1000}
                   disabled={isLoading}
                 />
 

@@ -30,6 +30,12 @@ export async function postJson(path, body) {
   });
 
   if (!response.ok) {
+    // Friendly errors (e.g. "you're sending messages very quickly") come
+    // with a reply to show in the chat.
+    const data = await response.json().catch(() => null);
+
+    if (data?.reply) return data;
+
     throw new Error(`Server error: ${response.status}`);
   }
 
